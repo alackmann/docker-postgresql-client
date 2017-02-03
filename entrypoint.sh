@@ -6,4 +6,4 @@ POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-${DB_ENV_POSTGRES_PASSWORD}}
 echo "db:*:*:"${POSTGRES_USER}":"${POSTGRES_PASSWORD} > ~/.pgpass
 chmod 0600 ~/.pgpass
 
-"$@" -U ${POSTGRES_USER} -h db
+"$@" -U ${POSTGRES_USER} -h ${POSTGRES_HOSTR:-db}
